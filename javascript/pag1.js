@@ -15,7 +15,7 @@ btncultura.addEventListener('click',()=>{
     window.scrollTo({ top: culturposi, behavior: 'smooth' })
 })
 btnsociedade.addEventListener('click',()=>{
-    window.scrollTo({ top: 500, behavior: 'smooth' })
+    window.scrollTo({ top: sociedadeposi, behavior: 'smooth' })
 })
 btncapital.addEventListener('click',()=>{
     window.scrollTo({ top: capitalposi, behavior: 'smooth' })
