@@ -7,6 +7,7 @@ body{
     background: linear-gradient(90deg, #43709b, #008B51);
     font-family: Ubuntu;
     display: flex;
+    flex-wrap: wrap;
     color: rgba(0, 0, 0, 0.8);
     
 }
@@ -14,26 +15,40 @@ body{
 #topbar{
     display: flex;
     top: 0;
-    padding: 20px;
     width: 100%;
-    height: 30px;
-    justify-content: right;
-    justify-self: end;
+    height: 80px;
+    text-align: center;
+    justify-content: space-between; /* Alinha itens à esquerda */
+    flex-wrap: wrap;
     position: fixed;
     background-color: rgba(255, 255, 255, 0.3);
     z-index: 1000;
     backdrop-filter: blur(20px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    border: solid 3px rgba(0, 0, 0, 0.411);
-    left: -3px;
-    top: -3px;
+}
+
+#topbar img{
+    display: flex;
+    justify-self: start;
+    align-self: center;
+    height: 75px;
+}
+
+#topbar .links{
+    display: flex;
+    flexwrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-right: 100px;
 }
 
 #topbar button{
     display: flex;
+    height: 40px;
+    align-self: center; 
     align-items: center;
-    padding: 15px;
-    border-radius: 5px;
+    padding: 0 15px;
+    border-radius: 5px; 
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.2);
     margin: 0 15px;
@@ -41,28 +56,15 @@ body{
     transition: all ease 0.5s;
 }
 
-#topbar button:last-child{
-    margin-right: 50px;
-}
-
 #topbar button:hover{
     background-color: rgba(255, 255, 255, 0.4);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     font-size: 15px;
-    margin: 0 20px;
+    margin: 20px;
     padding: 0 20px;
 }
 
-#topbar button:last-child:hover{
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-    font-size: 15px;
-    margin: 0 20px;
-    padding: 0 20px;
-    margin-right: 50px;
-}
 
 .container{
     background-color: rgba(255, 255, 255,0.2);       
@@ -83,7 +85,7 @@ body{
     background-color: rgba(255, 255, 255,0.2);       
     position: absolute;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     top: 100px;
     max-width: 20%;
     border-radius: 6px;
@@ -109,7 +111,7 @@ body{
     justify-items: right;
     transition: 0.3s ease;
 }
-img:hover{
+.container2 img:hover{
     box-shadow: 0 0 200px greenyellow;
     transform: scale(1.05);
 }
