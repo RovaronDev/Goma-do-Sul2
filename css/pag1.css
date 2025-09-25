@@ -159,6 +159,7 @@ b{
     height: max-content;
     margin: 120px auto 0;
     background: linear-gradient(45deg, #226399, #227d99, #228b99);
+    background-clip:text ;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
