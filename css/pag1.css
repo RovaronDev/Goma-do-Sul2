@@ -32,8 +32,11 @@ body{
     position: fixed;
     background-color: rgba(255, 255, 255, 0.3);
     z-index: 1000;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(5px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.302);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    
 }
 
 #topbar img{
@@ -44,7 +47,8 @@ body{
 }
 #topbar img:hover{
     cursor: pointer;
-    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.2));
+    filter: drop-shadow(4px 8px 3px rgba(0,0,0,0.2));
+    transform: translate(-2px,-4px);
 }
 
 #topbar .links{
@@ -59,17 +63,28 @@ body{
     height: 40px;
     align-items: center; 
     padding: 0 15px; 
-    border-radius: 5px; 
+    border-radius: 8px; 
     cursor: pointer;
     margin: 0 10px;
     border: none;
-    transition: all ease 0.5s;
+    transition: all  0.5s;
+    font-size: 14px;
+     color: white;
+     border: solid 2px rgba(255, 255, 255, 0.431);
+
+
 }
 
 #topbar button:hover{
-    background-color: rgba(55, 105, 146, 0.712);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
     transform: scale(1.05);
+    font-size: 18px;
+    padding: 0 10px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.164);
+    border-radius: 12px;
+    text-shadow: rgba(0, 0, 0, 0.2) 0.1em 0.1em 0.2em;
+    transform: translate(-2px,-4px);
+   
 }
 
 
@@ -139,7 +154,6 @@ b{
     padding: 20px;
     border-radius: 40px;
     top: 200vh;
-    backdrop-filter: blur(20px);
     right: 20px;
     height: 2.5%;
     width: auto;
@@ -158,10 +172,11 @@ b{
     box-sizing: border-box;
     height: max-content;
     margin: 120px auto 0;
-    background: linear-gradient(45deg, #226399, #227d99, #228b99);
+    background: linear-gradient(45deg, #186f98, #227d99, #228b99);
     background-clip:text ;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: 0.5s ease;
 }
 
 #titulo h1{
@@ -174,10 +189,10 @@ b{
     content: "";
     display: block;
     width: 0%;
-    height: 5px;
-    background-color: #227d99;
+    height: 4px;
+    background: linear-gradient(45deg, #186f98, #227d99, #228b99);
     margin: 0 auto;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-bottom: 10px;
     transition: all 0.5s ease;
 }
@@ -185,4 +200,10 @@ b{
 #titulo h1:hover::after{
     width: 100%;
     transform: translateY(-10px);
+}
+#titulo:hover{
+    font-size: 34.2px;
+    transform: translateY(-5px);
+    filter: drop-shadow(0 5px 3px rgba(0,0,0,0.3));
+
 }
