@@ -184,4 +184,5 @@ b{
 
 #titulo h1:hover::after{
     width: 100%;
+    transform: translateY(-10px);
 }
