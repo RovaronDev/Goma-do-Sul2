@@ -21,6 +21,8 @@ body{
     100%{background-position:0% 50%}
 }
 
+
+
 #topbar{
     display: flex;
     top: 0;
@@ -28,6 +30,7 @@ body{
     height: 80px;
     align-items: center;
     justify-content: space-between; /* Alinha itens à esquerda */
+    flex-direction: row;
     flex-wrap: wrap;
     position: fixed;
     background-color: rgba(255, 255, 255, 0.3);
@@ -36,25 +39,59 @@ body{
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.302);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    
+    transition: all 0.5s ease;
+}
+
+#topbar.topmaior{
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between; /* Alinha itens à esquerda */
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.302);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.5s ease;
+}
+
+#topbar.topmaior img{
+    height: 120px;
+    transform: translateX();
+    transition: all 0.5s ease;
+    position: absolute;
+}
+
+#topbar.topmaior .links{
+    display: flex;
+    max-height: 50px;
+    flex-wrap: wrap;
+    transition: all 0.5s ease;
 }
 
 #topbar img{
-    display: block;
     height: 65px;
-    margin-left: 50px;
-    transition: all 0.5s;
+    margin: 0 0 0 50px;
+    transition: all 0.5s ease;
 }
 #topbar img:hover{
     cursor: pointer;
     filter: drop-shadow(4px 8px 3px rgba(0,0,0,0.2));
     transform: translate(-2px,-4px);
+    transition: all 0.5s ease;
 }
 
 #topbar .links{
     display: flex;
     flex-wrap: wrap;
-    margin-right: 100px;
+    margin: 0 100px 0 0;
+    transition: all 0.5s ease;
 }
 
 #topbar button{
@@ -69,21 +106,19 @@ body{
     border: none;
     transition: all  0.5s;
     font-size: 14px;
-     color: white;
-     border: solid 2px rgba(255, 255, 255, 0.431);
-
-
+    color: white;
+    border: solid 2px rgba(255, 255, 255, 0.431);
 }
 
 #topbar button:hover{
 
-    transform: scale(1.05);
+
     font-size: 18px;
     padding: 0 10px;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.164);
     border-radius: 12px;
     text-shadow: rgba(0, 0, 0, 0.2) 0.1em 0.1em 0.2em;
-    transform: translate(-2px,-4px);
+    transform: translate(-2px,-4px) scale(1.05);
    
 }
 
@@ -172,7 +207,6 @@ b{
     width: auto;
     transition: 0.5s ease;
     filter: invert(1) ;
-    
 
 }
 #seta:hover img{
@@ -198,9 +232,10 @@ b{
     font-family: "Playfair Display", sans-serif;
     font-optical-sizing: auto;
     font-weight: 900;
+    margin: auto;
 }
 
-#titulo h1::after{
+#titulo::after{
     content: "";
     display: block;
     width: 0%;
@@ -212,13 +247,11 @@ b{
     transition: all 0.5s ease;
 }
 
-#titulo h1:hover::after{
+#titulo:hover::after{
     width: 100%;
     transform: translateY(-10px);
 }
 #titulo:hover{
     font-size: 34.2px;
     transform: translateY(-5px);
-    filter: drop-shadow(0 5px 3px rgba(0,0,0,0.3));
-
 }
