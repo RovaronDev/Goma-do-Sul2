@@ -87,56 +87,6 @@ body{
    
 }
 
-.container{
-    background-color: rgba(255, 255, 255,0.2);       
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    top: 200px;
-    max-width: 60%;
-    border-radius: 6px;
-    justify-content: left;
-    border: solid 3px rgba(0, 0, 0, 0.411);
-    left: 5%;
-    padding: 20px;
-    gap: 40px;
-    margin: 20px;
-}
-.container2{
-    background-color: rgba(255, 255, 255,0.2);       
-    position: absolute;
-    display: flex;
-    flex-wrap: nowrap;
-    top: 200px;
-    max-width: 20%;
-    border-radius: 6px;
-    justify-content: left;
-    border: solid 3px rgba(0, 0, 0, 0.411);
-    left: 70%;
-    padding: 10px;
-    gap: 40px;
-    margin: 20px;
-    border-radius: 12px;
-}
-.container h1{
-    font-size: 300%;
-    font-weight: bolder;
-}
-
-.container2 img{
-    max-width: max-content;
-    max-height: max-content;
-    overflow: hidden;
-    border: solid rgba(0, 0, 0, 0.45);
-    border-radius: 12px;
-    
-    justify-items: right;
-    transition: 0.3s ease;
-}
-.container2 img:hover{
-    box-shadow: 0 0 100vh rgba(0, 0, 0, 0.33);
-    transform: scale(1.05);
-}
 b{
     color: greenyellow;
     font-weight: bolder;   
@@ -219,5 +169,156 @@ b{
     font-size: 34.2px;
     transform: translateY(-5px);
     filter: drop-shadow(0 5px 3px rgba(0,0,0,0.3));
+}
 
+main {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1500px;
+    align-items: center;
+    margin-top: 50px;
+    gap: 50px;
+}
+
+#conteudo1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#cidade{
+    height: 500px;
+    width: 30%;
+    background: linear-gradient(90deg, #5de0e6, #004aad);
+    border-radius: 50px;
+}
+
+#cidade h1{
+    text-align: center;
+    color: white;
+    font-size: 36dp;
+    font-weight: bolder;
+    padding-top: 20px;
+}
+
+#cidade img{
+    display: block;
+    height: 400px;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    background: #f8ffff;
+    transition: all 0.5s ease;
+}
+/*
+    nigga nigga nigga nigga nigga nigga nigga nigga
+*/
+#descricao{
+    height: 500px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+#botoes-descricao{
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#botoes-descricao button{
+    width: 100%;
+    background: linear-gradient(90deg, #5de0e6, #004aad);
+    border-radius: 40px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    transition: all 0.3s ease;
+}
+
+#botoes-descricao button:hover{
+    margin-bottom: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+
+
+#principal-descricao{
+    background: linear-gradient(90deg, #5de0e6, #004aad);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#conteudo-principal-descricao{
+    width: calc(100% - 100px); /* tira umas bordinhas dos lados*/
+    height: calc(100% - 100px);
+    background: #f8ffff;
+    padding: 25px;
+    border-radius: 50px;
+
+    overflow-y: scroll;
+    scrollbar-width: thin;       
+    scrollbar-color: #004aad #f8ffff; 
+    
+}
+
+#conteudo-principal-descricao h2{
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 20px;
+}   
+
+#conteudo-principal-descricao p{
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+#descricao h1{
+    text-align: center;
+    color: white;
+    font-size: 36dp;
+    font-weight: bolder;
+    padding-top: 20px;
+}
+
+#conteudo2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#parana-botoes{
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    width: auto;
+}
+
+#principal-descricao{
+    background: linear-gradient(90deg, #5de0e6, #004aad);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
