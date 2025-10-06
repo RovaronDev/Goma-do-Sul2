@@ -6,7 +6,7 @@
 }
 body{
     height: 3400px;
-    background: linear-gradient(90deg, #7a93aa, #a6c3dd);
+    background: #f8ffff;
     background-size: 150% 150%;
     font-family: Ubuntu;
     display: flex;
@@ -30,7 +30,7 @@ body{
     justify-content: space-between; /* Alinha itens à esquerda */
     flex-wrap: wrap;
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(90deg, #5de0e6, #004aad);
     z-index: 1000;
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
@@ -86,7 +86,6 @@ body{
     transform: translate(-2px,-4px);
    
 }
-
 
 .container{
     background-color: rgba(255, 255, 255,0.2);       
