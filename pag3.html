@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="icon" href="../imagens/icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/pag3.css">
+</head>
+<body><!--qnd for colocar os botões do top bar coloca respectivamente os botões com os id´s: cultura, sociedade, capital, economia -->
+    
+    <div id="topbar">
+        <img id="icone" src="../imagens/icone.png" alt="Logo">
+        <div class="links">
+            <button id="cultura">Cidades</button>
+            <button id="sociedade">Paraná</button>
+            <button id="capital">Região Sul</button>
+        </div>
+    </div>
+
+    <main>
+        <div id="titulo">
+            <h1>ZONA SUL BRASILEIRA</h1>
+        </div>
+        
+        <div id="seta">
+            <img src="../imagens/seta_p_cima.png" alt="setinha">
+        </div>
+
+        <div id="conteudo1">
+            <div id="cidade">
+                <h1>MAPA</h1>
+                <img id="imagem-cidade"src="../imagens/sul.jpg" alt="">
+            </div>
+
+            <div id="descricao">
+                <div id="botoes-descricao">
+                    <button id="btn1"onclick="btnm1()">Economia</button>
+                    <button id="btn2"onclick="btnm2()">Cultura</button>
+                    <button id="btn3"onclick="btnm3()">Geografia</button>
+                    <button id="btn4"onclick="btnm4()">Sociedade</button>
+                </div>
+
+                <div id="principal-descricao">
+                    <div id="conteudo-principal-descricao">
+                        <h2>Conteúdo Principal</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicin ipsum dolor sit amet consectetur adipisicing elit. Adipisci, nobis quod? Corporis in quis alias nemo numquam dolores, dignissimos, sint deserunt incidunt voluptatem doloribus facilis ducimus, vero tenetur laudantium? Possimus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus laborum voluptatem provident explicabo eveniet minus corporis reiciendis, nemo ipsum ex autem earum officia consequatur, magni distinctio vitae quisquam! Laborum, consequuntur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, obcaecati nesciunt eum aperiam et praesentium quisquam veritatis numquam amet, officiis repudiandae excepturi? Corrupti, quisquam? Ipsa eaque qui quaerat? Aut, quae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, officia blanditiis! Odit ut accusantium laborum? Incidunt enim molestias sed a ab laborum excepturi, saepe voluptatibus voluptate recusandae? A, amet porro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <script >
+    //constantes dos botões
+const btncultura = document.getElementById('cultura')
+const btnsociedade = document.getElementById('sociedade')
+const btncapital = document.getElementById('capital')
+const btneconomia = document.getElementById('economia')
+const seta = document.getElementById('seta')
+const icone = document.getElementById('icone')
+let setaa = false
+let modulo1 = 1
+mudar()
+btnm1()
+
+//variáveis de para onde será escrolado dependendo do botão
+let culturposi = 0;
+let sociedadeposi = 100;
+let capitalposi = 200;
+let economiaposi = 300;
+seta.style.top = `5000px`
+//eventlistener botões top-bar
+btncultura.addEventListener('click',()=>{
+   window.location.href = "/html/pag1.html"
+})
+btnsociedade.addEventListener('click',()=>{
+    window.location.href = "/html/pag2.html"
+})
+btncapital.addEventListener('click',()=>{
+    window.location.href = "/html/pag3.html"
+})
+
+seta.addEventListener('click',()=>{
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    seta.style.top = `200vh`;
+    setaa = true
+
+})
+document.addEventListener('scroll',()=>{
+    if(window.scrollY > 400){
+        console.log(window.scrollY)
+        if(setaa == false) seta.style.top = `86vh`; 
+        setaa = true
+    }
+    else{
+        seta.style.top = `200vh`;
+    setaa = false
+}
+})
+
+icone.addEventListener('click',()=>{
+    window.location.href = '/html/pag1.html' 
+})
+function btnm1(){
+    
+    modulo1=1
+    mudar()
+    document.getElementById("btn1").classList.add("at");
+    document.getElementById("btn2").classList.remove("at");
+    document.getElementById("btn3").classList.remove("at");
+    document.getElementById("btn4").classList.remove("at");
+}
+function btnm2(){
+    modulo1=2
+    mudar()
+    document.getElementById("btn1").classList.remove("at");
+    document.getElementById("btn2").classList.add("at");
+    document.getElementById("btn3").classList.remove("at");
+    document.getElementById("btn4").classList.remove("at");
+}
+function btnm3(){
+    modulo1=3
+    mudar()
+    document.getElementById("btn1").classList.remove("at");
+    document.getElementById("btn2").classList.remove("at");
+    document.getElementById("btn3").classList.add("at");
+    document.getElementById("btn4").classList.remove("at");
+}
+function btnm4(){
+    modulo1=4
+    mudar()
+    document.getElementById("btn1").classList.remove("at");
+    document.getElementById("btn2").classList.remove("at");
+    document.getElementById("btn3").classList.remove("at");
+    document.getElementById("btn4").classList.add("at");
+}
+function mudar(){
+    if(modulo1==1){
+                document.getElementById("principal-descricao").style.borderTopRightRadius = "40px";
+
+        document.getElementById("principal-descricao").style.borderTopLeftRadius = "0";
+       
+        document.getElementById("conteudo-principal-descricao").innerHTML = `<h2>Economia</h2>
+        <p>A economia do Sul é bastante diversificada e desenvolvida. A agropecuária é um dos principais setores, com destaque para a produção de soja, milho, carnes e vinhos. A indústria também é forte, especialmente nos ramos metalúrgico, têxtil, automotivo e alimentício. Além disso, o comércio e o turismo rural e de inverno vêm crescendo bastante, contribuindo para o desenvolvimento econômico da região.</p>`;
+    }
+    else if(modulo1==2){
+                document.getElementById("principal-descricao").style.borderTopRightRadius = "40px";
+
+                document.getElementById("principal-descricao").style.borderTopLeftRadius = "40px";
+
+     document.getElementById("conteudo-principal-descricao").innerHTML = `<h2>Cultura</h2>
+          <p>A cultura sulista é marcada pela mistura entre as tradições europeias e as brasileiras. Festas típicas como a Oktoberfest (em Santa Catarina) e a Festa da Uva (no Rio Grande do Sul) mostram essa herança. A música regional, como o fandango e a música gaúcha, e a gastronomia, com o chimarrão, o churrasco e as cucas, são símbolos importantes da identidade cultural da região.</p>`;
+    }
+else if(modulo1==3){
+            document.getElementById("principal-descricao").style.borderTopRightRadius = "40px";
+
+            document.getElementById("principal-descricao").style.borderTopLeftRadius = "40px";
+
+            document.getElementById("conteudo-principal-descricao").innerHTML = `<h2>Geografia</h2>
+    <p>A Região Sul é composta pelos estados do Paraná, Santa Catarina e Rio Grande do Sul. Seu relevo é variado, com planaltos, serras e litoral, além de um clima subtropical, que apresenta as quatro estações bem definidas. A vegetação é diversificada, com áreas de Mata Atlântica, campos e pinheirais. A geografia favorece tanto a agricultura quanto o turismo, com paisagens naturais marcantes e belas cidades.</p>`;
+}
+else if(modulo1==4){
+            document.getElementById("principal-descricao").style.borderTopRightRadius = "0";
+
+            document.getElementById("principal-descricao").style.borderTopLeftRadius = "40px";
+
+           document.getElementById("conteudo-principal-descricao").innerHTML = `<h2>Sociedade</h2>
+    <p>A sociedade da Região Sul do Brasil é formada principalmente por descendentes de imigrantes europeus, como italianos, alemães, poloneses e portugueses, que influenciaram fortemente os costumes, a arquitetura e a culinária local. É uma região com altos índices de escolaridade e qualidade de vida, além de uma forte valorização do trabalho, da família e das tradições culturais herdadas dos antepassados.</p>`;
+} }
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="icon" href="../imagens/icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/pag2.css">
+</head>
+<body><!--qnd for colocar os botões do top bar coloca respectivamente os botões com os id´s: cultura, sociedade, capital, economia -->
+    
+    <div id="topbar">
+        <img id="icone" src="../imagens/icone.png" alt="Logo">
+        <div class="links">
+            <button id="cultura">Cidades</button>
+            <button id="sociedade">Paraná</button>
+            <button id="capital">Região Sul</button>
+        </div>
+    </div>
+
+    <main>
+        <div id="titulo">
+            <h1>PARANÁ</h1>
+        </div>
+        
+        <div id="seta">
+            <img src="../imagens/seta_p_cima.png" alt="setinha">
+        </div>
+
+        <div id="conteudo1">
+            <div id="cidade">
+                <h1>CIDADE</h1>
+                <img id="imagem-cidade"src="../imagens/parana.png" alt="">
+            </div>
+
+            <div id="descricao">
+                <div id="botoes-descricao">
+                    <button id="btn1"onclick="btnm1()">Economia</button>
+                    <button id="btn2"onclick="btnm2()">Cultura</button>
+                    <button id="btn3"onclick="btnm3()">Geografia</button>
+                    <button id="btn4"onclick="btnm4()">Sociedade</button>
+                </div>
+
+                <div id="principal-descricao">
+                    <div id="conteudo-principal-descricao">
+                        <h2>Conteúdo Principal</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicin ipsum dolor sit amet consectetur adipisicing elit. Adipisci, nobis quod? Corporis in quis alias nemo numquam dolores, dignissimos, sint deserunt incidunt voluptatem doloribus facilis ducimus, vero tenetur laudantium? Possimus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus laborum voluptatem provident explicabo eveniet minus corporis reiciendis, nemo ipsum ex autem earum officia consequatur, magni distinctio vitae quisquam! Laborum, consequuntur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, obcaecati nesciunt eum aperiam et praesentium quisquam veritatis numquam amet, officiis repudiandae excepturi? Corrupti, quisquam? Ipsa eaque qui quaerat? Aut, quae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, officia blanditiis! Odit ut accusantium laborum? Incidunt enim molestias sed a ab laborum excepturi, saepe voluptatibus voluptate recusandae? A, amet porro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <script >
+    //constantes dos botões
+const btncultura = document.getElementById('cultura')
+const btnsociedade = document.getElementById('sociedade')
+const btncapital = document.getElementById('capital')
+const btneconomia = document.getElementById('economia')
+const seta = document.getElementById('seta')
+const icone = document.getElementById('icone')
+let setaa = false
+let modulo1 = 1
+mudar()
+btnm1()
+
+//variáveis de para onde será escrolado dependendo do botão
+let culturposi = 0;
+let sociedadeposi = 100;
+let capitalposi = 200;
+let economiaposi = 300;
+seta.style.top = `5000px`
+//eventlistener botões top-bar
+btncultura.addEventListener('click',()=>{
+   window.location.href = "/html/pag1.html"
+})
+btnsociedade.addEventListener('click',()=>{
+    window.location.href = "/html/pag2.html"
+})
+btncapital.addEventListener('click',()=>{
+    window.location.href = "/html/pag3.html"
+})
+
+seta.addEventListener('click',()=>{
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    seta.style.top = `200vh`;
+    setaa = true
+
+})
+document.addEventListener('scroll',()=>{
+    if(window.scrollY > 400){
+        console.log(window.scrollY)
+        if(setaa == false) seta.style.top = `86vh`; 
+        setaa = true
+    }
+    else{
+        seta.style.top = `200vh`;
+    setaa = false
+}
+})
+
+icone.addEventListener('click',()=>{
+    window.location.href = '/html/pag1.html' 
+})
+function btnm1(){
+    
+    modulo1=1
+    mudar()
+    document.getElementById("btn1").classList.add("at");
+    document.getElementById("btn2").classList.remove("at");
+    document.getElementById("btn3").classList.remove("at");
+    document.getElementById("btn4").classList.remove("at");
+}
+function btnm2(){
+    modulo1=2
+    mudar()
+    document.getElementById("btn1").classList.remove("at");
+    document.getElementById("btn2").classList.add("at");
+    document.getElementById("btn3").classList.remove("at");
+    document.getElementById("btn4").classList.remove("at");
+}
+function btnm3(){
+    modulo1=3
+    mudar()
+    document.getElementById("btn1").classList.remove("at");
+    document.getElementById("btn2").classList.remove("at");
+    document.getElementById("btn3").classList.add("at");
+    document.getElementById("btn4").classList.remove("at");
+}
+function btnm4(){
+    modulo1=4
+    mudar()
+    document.getElementById("btn1").classList.remove("at");
+    document.getElementById("btn2").classList.remove("at");
+    document.getElementById("btn3").classList.remove("at");
+    document.getElementById("btn4").classList.add("at");
+}
+function mudar(){
+    if(modulo1==1){
+                document.getElementById("principal-descricao").style.borderTopRightRadius = "40px";
+
+        document.getElementById("principal-descricao").style.borderTopLeftRadius = "0";
+       
+        document.getElementById("conteudo-principal-descricao").innerHTML = `<h2>Economia</h2>
+        <p>A economia do Paraná tem como base a  agropecuária, com destaque para soja, milho, trigo, feijão, café, carne bovina e suína, além de criação de aves. A indústria também é relevante, incluindo setores como automobilístico, metalúrgico, químico, têxtil e papel e celulose. O turismo é um setor crescente destacando-se, com atrações como Cataratas do Iguaçu, Ilha do Mel e cidades históricas como Lapa e Antonina.</p>`;
+    }
+    else if(modulo1==2){
+                document.getElementById("principal-descricao").style.borderTopRightRadius = "40px";
+
+                document.getElementById("principal-descricao").style.borderTopLeftRadius = "40px";
+
+     document.getElementById("conteudo-principal-descricao").innerHTML = `<h2>Cultura</h2>
+          <p>A cultura do Paraná é marcada pela diversidade de povos que formaram o estado. Além da influência indígena e portuguesa, há fortes contribuições de imigrantes europeus, como italianos, alemães, poloneses, ucranianos e também japoneses, que trouxeram seus costumes, festas e tradições. Essa mistura resultou em um conjunto cultural rico, presente na arquitetura, nas danças folclóricas, nas festas típicas e na vida cotidiana dos paranaenses.
+Na culinária, destacam-se pratos como o barreado, típico do litoral, e o pinhão, muito consumido nas festas juninas e no inverno. O chimarrão e o tererê também fazem parte dos hábitos da população, influenciados pela cultura gaúcha. 
+</p>`;
+    }
+else if(modulo1==3){
+            document.getElementById("principal-descricao").style.borderTopRightRadius = "40px";
+
+            document.getElementById("principal-descricao").style.borderTopLeftRadius = "40px";
+
+            document.getElementById("conteudo-principal-descricao").innerHTML = `<h2>Geografia</h2>
+    <p>O Paraná está localizado na Região Sul do Brasil, fazendo fronteira com São Paulo, Mato Grosso do Sul, Santa Catarina, Paraguai e Argentina, e possui saída para o Oceano Atlântico. O relevo é variado, com planaltos, serras e áreas de depressão, e o clima predominante é subtropical, com invernos frios e verões úmidos. A região é rica em rios, destacando-se o Paraná, Iguaçu e Tibagi, além de possuir as famosas Cataratas do Iguaçu.</p>`;
+}
+else if(modulo1==4){
+            document.getElementById("principal-descricao").style.borderTopRightRadius = "0";
+
+            document.getElementById("principal-descricao").style.borderTopLeftRadius = "40px";
+
+           document.getElementById("conteudo-principal-descricao").innerHTML = `<h2>Sociedade</h2>
+    <p>A sociedade paranaense é fortemente influenciada pelas imigrações europeias, especialmente de italianos, alemães, poloneses e ucranianos, que se estabeleceram no estado a partir do século XIX em busca de terras e melhores oportunidades. <br> Esses grupos contribuíram para o desenvolvimento agrícola, industrial e comercial, além de preservarem suas línguas, religiões, costumes e tradições. Essa herança se reflete na cultura local, formando uma sociedade com forte espírito comunitário, valorização do trabalho, da educação e da coesão social.</p>`;
+} }
+    </script>
+</body>
+</html>
