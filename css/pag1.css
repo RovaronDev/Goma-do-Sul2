@@ -214,6 +214,7 @@ main {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     background: #f8ffff;
     transition: all 0.5s ease;
+    border: solid 2px rgba(0, 0, 0, 0.1);
 }
 /*
     nigga nigga nigga nigga nigga nigga nigga nigga
@@ -231,30 +232,31 @@ main {
     flex-direction: row;
     justify-content: space-between;
     gap: 20px;
+    transition: all 0.5s;
 }
 
 #botoes-descricao button{
     width: 100%;
-    background: linear-gradient(90deg, #5de0e6, #004aad);
+    background: blue;
     border-radius: 40px;
     margin-bottom: 10px;
     font-size: 30px;
     color: white;
     font-weight: bold;
     border: 0;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
-#botoes-descricao button:hover{
+#botoes-descricao button.at{
     margin-bottom: 0px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-
+    background: rgb(7, 182, 217);
 }
 
 
 #principal-descricao{
-    background: linear-gradient(90deg, #5de0e6, #004aad);
+    background: rgb(7, 182, 217);
     height: 100%;
     display: flex;
     align-items: center;
@@ -267,13 +269,14 @@ main {
 #conteudo-principal-descricao{
     width: calc(100% - 100px); /* tira umas bordinhas dos lados*/
     height: calc(100% - 100px);
-    background: #f8ffff;
+    background: #ffffff;
     padding: 25px;
     border-radius: 50px;
-
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.3);
     overflow-y: scroll;
     scrollbar-width: thin;       
     scrollbar-color: #004aad #f8ffff; 
+    border: solid 2px rgba(0, 0, 0, 0.1);
     
 }
 
@@ -313,7 +316,7 @@ main {
 }
 
 #principal-descricao{
-    background: linear-gradient(90deg, #5de0e6, #004aad);
+    background: rgb(7, 182, 217);
     height: 100%;
     display: flex;
     align-items: center;
