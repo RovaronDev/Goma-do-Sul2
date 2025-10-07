@@ -233,6 +233,7 @@ main {
     justify-content: space-between;
     gap: 20px;
     transition: all 0.5s;
+    text-shadow: 0 0 4px black ;
 }
 
 #botoes-descricao button{
@@ -277,6 +278,7 @@ main {
     scrollbar-width: thin;       
     scrollbar-color: #004aad #f8ffff; 
     border: solid 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease  ;
     
 }
 
@@ -322,6 +324,11 @@ main {
     align-items: center;
     justify-content: center;
     border-radius: 40px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    transition: all 0.5s ease  ;
+    border-top-right-radius: 40px;
+    border-top-left-radius:40px;
+
 }
+
+
+    
